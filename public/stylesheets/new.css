@@ -1,0 +1,113 @@
+/* Reset default margin and padding */
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/Lato-Regular.ttf') format('truetype');
+    font-family: 'Caudex';
+    src: url('fonts/Caudex-Bold.ttf') format('truetype');
+  }
+  
+  
+  * {
+      margin: 0;
+      padding: 0;
+    }
+  
+    body{
+      background-color: #a7a6a3;
+      font-family: 'Caudex', sans-serif;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fcff64;
+      padding: 10px;
+    }
+  
+    .add-button{
+      background-color: #fcff64;
+      border-radius: 15px;
+      color: #333333;
+      height: 30px;
+      width: 250px;
+    }
+  
+    .logotype{
+      border-radius: 60px;
+      height: 40px;
+    }
+  
+    .navbar-buttons{
+      background-color: #fcff64;
+      border: none;
+      color: #333333;
+    }
+    
+    .navbar-left img {
+      max-width: 100px;
+    }
+    
+    .navbar-right img {
+      max-width: 50px;
+    }
+    
+    .navbar-right button {
+      margin-left: 10px;
+    }
+    
+    .search-bar {
+      background-color: #333333;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .search-bar input {
+      border-radius: 15px;
+      width: 80%;
+      padding: 5px;
+    }
+    
+    .card-container {
+      background-color: #a7a6a3;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 10px;
+    }
+    
+    .card {
+      height: 50%;
+      width: 30%;
+      background-color: #fcff64;
+      border-radius: 15px;
+      padding: 10px;
+      margin-bottom: 10px;
+      display: flex;
+    }
+    
+    .card-image {
+      width: 33%;
+    }
+    
+    .card-info {
+      width: 67%;
+      padding-left: 10px;
+    }
+    
+    .card-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+    
+    .card-info h2 {
+      margin-bottom: 5px;
+    }
+    
+    .card-info p {
+      margin-bottom: 3px;
+    }
