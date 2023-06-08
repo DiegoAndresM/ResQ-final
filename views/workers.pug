@@ -1,22 +1,7 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title= title
-    link(rel='stylesheet', href='../stylesheets/new.css')
-  body  
+extends layout
 
-    nav
-        section.navbar-left
-            img.logotype(src='C:\Users\LENOVO\Downloads\testimonials-grid-section-main\images\images.png', alt='Logo')
-            button.navbar-buttons ResQ
-        section.navbar-right
-            button.navbar-buttons Settings
-            button.navbar-buttons Workers
-            button.navbar-buttons Map
-            img(src='C:\Users\LENOVO\Downloads\testimonials-grid-section-main\images\descarga.jpg', alt='Profile Image')
+block content
+
     section.search-bar
         input(type='text', placeholder='Search')
         button.add-button ADD
@@ -25,7 +10,7 @@ html(lang="en")
         section.card
             section.card-image
                 img(src='.\public\images\descarga1.jpg', alt='Worker Image')
-            section.card-info
+            section.card-inf
                 h2 Cristiano Ronaldo
                 p Blood Type: O+
                 p Age: 38
@@ -57,7 +42,7 @@ html(lang="en")
 
         section.card
             section.card-image
-                img(src='C:\Users\LENOVO\Downloads\testimonials-grid-section-main\workers-images\descarga (1).jpg', alt='Worker Image')
+            img(src='C:\Users\LENOVO\Downloads\testimonials-grid-section-main\workers-images\descarga (1).jpg', alt='Worker Image')
             section.card-info
                 h2 Cristiano Ronaldo
                 p Blood Type: O+
@@ -76,7 +61,7 @@ html(lang="en")
                 p Weight: 70 kg
                 p Height: 175 cm
                 p Status: Active
-            
+                
         section.card
             section.card-image
                 img(src='C:\Users\LENOVO\Downloads\testimonials-grid-section-main\workers-images\descarga (2).jpg', alt='Worker Image')
