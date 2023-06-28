@@ -16,6 +16,7 @@ var usersRouter = require('./routes/users');
 var workersRouter = require('./routes/workers');
 var mapRouter = require('./routes/map');
 var registerRouter = require('./routes/register');
+var chartsRouter = require('./routes/charts');
 
 var app = express();
 require('./server');
@@ -51,6 +52,8 @@ app.use('/users', usersRouter);
 app.use('/workers', workersRouter);
 app.use('/map', mapRouter);
 app.use('/register', registerRouter);
+app.use('/charts', chartsRouter);
+
 
 app.use((req, res, next) => {
   app.locals.signinMessage = req.flash('signinMessage');

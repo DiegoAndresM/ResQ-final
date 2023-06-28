@@ -1318,7 +1318,7 @@ input:checked + .toggle-bg {
   height: 2rem;
 }
 
-.w-1\/2 {
+.w-medium {
   width: 50%;
 }
 
