@@ -17,6 +17,9 @@ var workersRouter = require('./routes/workers');
 var mapRouter = require('./routes/map');
 var registerRouter = require('./routes/register');
 var chartsRouter = require('./routes/charts');
+var profileRouter = require('./routes/profile');
+var signinRouter = require('./routes/signin');
+
 
 var app = express();
 require('./server');
@@ -37,6 +40,14 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use((req, res, next) => {
+  app.locals.signinMessage = req.flash('signinMessage');
+  app.locals.signupMessage = req.flash('signupMessage');
+  app.locals.user = req.user;
+  console.log(app.locals)
+  next();
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -53,15 +64,12 @@ app.use('/workers', workersRouter);
 app.use('/map', mapRouter);
 app.use('/register', registerRouter);
 app.use('/charts', chartsRouter);
+app.use('/profile', profileRouter);
+app.use('/signin', signinRouter);
 
 
-app.use((req, res, next) => {
-  app.locals.signinMessage = req.flash('signinMessage');
-  app.locals.signupMessage = req.flash('signupMessage');
-  app.locals.user = req.user;
-  console.log(app.locals)
-  next();
-});
+
+
 
 
 

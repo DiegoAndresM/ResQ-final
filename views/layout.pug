@@ -8,6 +8,8 @@ html(lang="en")
     link(rel='stylesheet', href='../stylesheets/style.css')
     link(rel='stylesheet', href='../stylesheets/new.css')
     script(src='https://cdn.tailwindcss.com')
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.css', rel='stylesheet')
+
 
    
   body 
@@ -20,6 +22,7 @@ html(lang="en")
           button#user-menu-button.flex.mr-3.text-sm.bg-gray-800.rounded-full(type='button' class='md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600' aria-expanded='false' data-dropdown-toggle='user-dropdown' data-dropdown-placement='bottom')
             span.sr-only Open user menu
             img.w-6.h-6.rounded-full(src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuw6eoLg-LJVsqcG8VltKMdFMakOSVn4eB1VxdLeY49w&s' alt='user photo')
+
           // Dropdown menu
           #user-dropdown.z-50.hidden.my-4.text-base.list-none.bg-white.divide-y.divide-gray-100.rounded-lg.shadow(class='dark:bg-gray-700 dark:divide-gray-600')
             .px-4.py-3
@@ -27,11 +30,11 @@ html(lang="en")
               span.block.text-sm.text-gray-500.truncate(class='dark:text-gray-400') name@flowbite.com
             ul.py-2(aria-labelledby='user-menu-button')
               li
-                a.block.px-4.py-2.text-sm.text-gray-700(href='#' class='hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white') Dashboard
+                a.block.px-4.py-2.text-sm.text-gray-700(href='/register' class='hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white') Signup
               li
-                a.block.px-4.py-2.text-sm.text-gray-700(href='#' class='hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white') Settings
+                a.block.px-4.py-2.text-sm.text-gray-700(href='/profile' class='hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white') Profile
               li
-                a.block.px-4.py-2.text-sm.text-gray-700(href='#' class='hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white') Earnings
+                a.block.px-4.py-2.text-sm.text-gray-700(href='/signin' class='hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white') signIn
               li
                 a.block.px-4.py-2.text-sm.text-gray-700(href='#' class='hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white') Sign out
           button.inline-flex.items-center.p-2.ml-1.text-sm.text-gray-500.rounded-lg(data-collapse-toggle='mobile-menu-2' type='button' class='md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600' aria-controls='mobile-menu-2' aria-expanded='false')
@@ -53,6 +56,9 @@ html(lang="en")
 
 
     block content
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js')
+
+
     
     
   
