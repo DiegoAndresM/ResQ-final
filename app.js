@@ -12,13 +12,13 @@ const MongoStore = require('connect-mongo');
 
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var workersRouter = require('./routes/workers');
-var mapRouter = require('./routes/map');
-var registerRouter = require('./routes/register');
-var chartsRouter = require('./routes/charts');
-var profileRouter = require('./routes/profile');
-var signinRouter = require('./routes/signin');
+var usersRouter = require('./routes/index');
+var workersRouter = require('./routes/index');
+var mapRouter = require('./routes/index');
+var registerRouter = require('./routes/index');
+var chartsRouter = require('./routes/index');
+var profileRouter = require('./routes/index');
+var signinRouter = require('./routes/index');
 
 
 var app = express();
@@ -38,7 +38,7 @@ app.use(require('express-session')({
 
 app.use(flash());
 app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.session());6
 
 app.use((req, res, next) => {
   app.locals.signinMessage = req.flash('signinMessage');

@@ -12,48 +12,84 @@ html(lang="en")
 
 
    
-  body 
-    nav.bg-white.border-gray-200(class='dark:bg-gray-900')
-      .max-w-screen-xl.flex.flex-wrap.items-center.justify-between.mx-auto.p-4
-        a.flex.items-center(href='https://flowbite.com/')
-          img.h-8.mr-3(src='https://flowbite.com/docs/images/logo.svg' alt='Flowbite Logo')
-          span.self-center.text-2xl.font-semibold.whitespace-nowrap(class='dark:text-white') ResQ
-        .flex.items-center(class='md:order-2')
-          button#user-menu-button.flex.mr-3.text-sm.bg-gray-800.rounded-full(type='button' class='md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600' aria-expanded='false' data-dropdown-toggle='user-dropdown' data-dropdown-placement='bottom')
-            span.sr-only Open user menu
-            img.w-6.h-6.rounded-full(src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuw6eoLg-LJVsqcG8VltKMdFMakOSVn4eB1VxdLeY49w&s' alt='user photo')
+  body
+    if (!user)
+      nav.bg-white.border-gray-200(class='dark:bg-gray-900')
+        .max-w-screen-xl.flex.flex-wrap.items-center.justify-between.mx-auto.p-4
+          a.flex.items-center(href='https://flowbite.com/')
+            img.h-8.mr-3(src='https://flowbite.com/docs/images/logo.svg' alt='Flowbite Logo')
+            span.self-center.text-2xl.font-semibold.whitespace-nowrap(class='dark:text-white') ResQ
+          .flex.items-center(class='md:order-2')
+            button#user-menu-button.flex.mr-3.text-sm.bg-gray-800.rounded-full(type='button' class='md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600' aria-expanded='false' data-dropdown-toggle='user-dropdown' data-dropdown-placement='bottom')
+              span.sr-only Open user menu
+              img.w-6.h-6.rounded-full(src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuw6eoLg-LJVsqcG8VltKMdFMakOSVn4eB1VxdLeY49w&s' alt='user photo')
 
-          // Dropdown menu
-          #user-dropdown.z-50.hidden.my-4.text-base.list-none.bg-white.divide-y.divide-gray-100.rounded-lg.shadow(class='dark:bg-gray-700 dark:divide-gray-600')
-            .px-4.py-3
-              span.block.text-sm.text-gray-900(class='dark:text-white') Bonnie Green
-              span.block.text-sm.text-gray-500.truncate(class='dark:text-gray-400') name@flowbite.com
-            ul.py-2(aria-labelledby='user-menu-button')
+            // Dropdown menu
+            #user-dropdown.z-50.hidden.my-4.text-base.list-none.bg-white.divide-y.divide-gray-100.rounded-lg.shadow(class='dark:bg-gray-700 dark:divide-gray-600')
+              ul.py-2(aria-labelledby='user-menu-button')
+                li
+                  a.block.px-4.py-2.text-sm.text-gray-700(href='/register' class='hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white') Signup
+                li
+                  a.block.px-4.py-2.text-sm.text-gray-700(href='/signin' class='hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white') signIn
+                li
+                  a.block.px-4.py-2.text-sm.text-gray-700(href='/logout' class='hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white') LogOut
+            button.inline-flex.items-center.p-2.ml-1.text-sm.text-gray-500.rounded-lg(data-collapse-toggle='mobile-menu-2' type='button' class='md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600' aria-controls='mobile-menu-2' aria-expanded='false')
+              span.sr-only Open main menu
+              svg.w-6.h-6(aria-hidden='true' fill='currentColor' viewbox='0 0 20 20' xmlns='http://www.w3.org/2000/svg')
+                path(fill-rule='evenodd' d='M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z' clip-rule='evenodd')
+          #mobile-menu-2.items-center.justify-between.hidden.w-full(class='md:flex md:w-auto md:order-1')
+            ul.flex.flex-col.font-medium.p-4.mt-4.border.border-gray-100.rounded-lg.bg-gray-50(class='md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700')
               li
-                a.block.px-4.py-2.text-sm.text-gray-700(href='/register' class='hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white') Signup
+                a.block.py-2.pl-3.pr-4.text-white.bg-blue-700.rounded(href='/' class='md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500' aria-current='page') Home
               li
-                a.block.px-4.py-2.text-sm.text-gray-700(href='/profile' class='hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white') Profile
+                a.block.py-2.pl-3.pr-4.text-gray-900.rounded(href='/workers' class='hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700') workers
               li
-                a.block.px-4.py-2.text-sm.text-gray-700(href='/signin' class='hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white') signIn
+                a.block.py-2.pl-3.pr-4.text-gray-900.rounded(href='/map' class='hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700') map
               li
-                a.block.px-4.py-2.text-sm.text-gray-700(href='#' class='hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white') Sign out
-          button.inline-flex.items-center.p-2.ml-1.text-sm.text-gray-500.rounded-lg(data-collapse-toggle='mobile-menu-2' type='button' class='md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600' aria-controls='mobile-menu-2' aria-expanded='false')
-            span.sr-only Open main menu
-            svg.w-6.h-6(aria-hidden='true' fill='currentColor' viewbox='0 0 20 20' xmlns='http://www.w3.org/2000/svg')
-              path(fill-rule='evenodd' d='M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z' clip-rule='evenodd')
-        #mobile-menu-2.items-center.justify-between.hidden.w-full(class='md:flex md:w-auto md:order-1')
-          ul.flex.flex-col.font-medium.p-4.mt-4.border.border-gray-100.rounded-lg.bg-gray-50(class='md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700')
-            li
-              a.block.py-2.pl-3.pr-4.text-white.bg-blue-700.rounded(href='/' class='md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500' aria-current='page') Home
-            li
-              a.block.py-2.pl-3.pr-4.text-gray-900.rounded(href='/workers' class='hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700') workers
-            li
-              a.block.py-2.pl-3.pr-4.text-gray-900.rounded(href='/map' class='hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700') map
-            li
-              a.block.py-2.pl-3.pr-4.text-gray-900.rounded(href='/register' class='hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700') Register
-            li
-              a.block.py-2.pl-3.pr-4.text-gray-900.rounded(href='/charts' class='hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700') Graficas
+                a.block.py-2.pl-3.pr-4.text-gray-900.rounded(href='/register' class='hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700') Register
+              li
+                a.block.py-2.pl-3.pr-4.text-gray-900.rounded(href='/charts' class='hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700') Graficas
+    else  
+      nav.bg-white.border-gray-200(class='dark:bg-gray-900')
+        .max-w-screen-xl.flex.flex-wrap.items-center.justify-between.mx-auto.p-4
+          a.flex.items-center(href='https://flowbite.com/')
+            img.h-8.mr-3(src='https://flowbite.com/docs/images/logo.svg' alt='Flowbite Logo')
+            span.self-center.text-2xl.font-semibold.whitespace-nowrap(class='dark:text-white') ResQ
+          .flex.items-center(class='md:order-2')
+            button#user-menu-button.flex.mr-3.text-sm.bg-gray-800.rounded-full(type='button' class='md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600' aria-expanded='false' data-dropdown-toggle='user-dropdown' data-dropdown-placement='bottom')
+              span.sr-only Open user menu
+              img.w-6.h-6.rounded-full(src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuw6eoLg-LJVsqcG8VltKMdFMakOSVn4eB1VxdLeY49w&s' alt='user photo')
 
+            // Dropdown menu
+            #user-dropdown.z-50.hidden.my-4.text-base.list-none.bg-white.divide-y.divide-gray-100.rounded-lg.shadow(class='dark:bg-gray-700 dark:divide-gray-600')
+              .px-4.py-3
+                span.block.text-sm.text-gray-900(class='dark:text-white') #{user.email}
+                span.block.text-sm.text-gray-500.truncate(class='dark:text-gray-400') name@flowbite.com
+              ul.py-2(aria-labelledby='user-menu-button')
+                li
+                  a.block.px-4.py-2.text-sm.text-gray-700(href='/register' class='hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white') Signup  
+                li
+                  a.block.px-4.py-2.text-sm.text-gray-700(href='/profile' class='hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white') Profile
+                li
+                  a.block.px-4.py-2.text-sm.text-gray-700(href='/signin' class='hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white') signIn
+                li
+                  a.block.px-4.py-2.text-sm.text-gray-700(href='/logout' class='hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white') Sign out
+            button.inline-flex.items-center.p-2.ml-1.text-sm.text-gray-500.rounded-lg(data-collapse-toggle='mobile-menu-2' type='button' class='md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600' aria-controls='mobile-menu-2' aria-expanded='false')
+              span.sr-only Open main menu
+              svg.w-6.h-6(aria-hidden='true' fill='currentColor' viewbox='0 0 20 20' xmlns='http://www.w3.org/2000/svg')
+                path(fill-rule='evenodd' d='M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z' clip-rule='evenodd')
+          #mobile-menu-2.items-center.justify-between.hidden.w-full(class='md:flex md:w-auto md:order-1')
+            ul.flex.flex-col.font-medium.p-4.mt-4.border.border-gray-100.rounded-lg.bg-gray-50(class='md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700')
+              li
+                a.block.py-2.pl-3.pr-4.text-white.bg-blue-700.rounded(href='/' class='md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500' aria-current='page') Home
+              li
+                a.block.py-2.pl-3.pr-4.text-gray-900.rounded(href='/workers' class='hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700') workers
+              li
+                a.block.py-2.pl-3.pr-4.text-gray-900.rounded(href='/map' class='hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700') map
+              li
+                a.block.py-2.pl-3.pr-4.text-gray-900.rounded(href='/register' class='hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700') Register
+              li
+                a.block.py-2.pl-3.pr-4.text-gray-900.rounded(href='/charts' class='hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700') Graficas
 
     block content
     script(src='https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js')
