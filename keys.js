@@ -1,5 +1,5 @@
 module.exports = {
     mongodb: {
-      URI: 'mongodb://127.0.0.1:27017/ResQ'
+      URI: 'mongodb+srv://admin:admin@cluster0.ndljknw.mongodb.net/ResQ'
     }
   };

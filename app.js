@@ -13,7 +13,7 @@ const MongoStore = require('connect-mongo');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/index');
-var workersRouter = require('./routes/index');
+var workersRouter = require('./routes/workers');
 var mapRouter = require('./routes/index');
 var registerRouter = require('./routes/index');
 var chartsRouter = require('./routes/index');
