@@ -31,7 +31,7 @@ require('./passport/local-auth');
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(require('express-session')({ 
-  store: MongoStore.create({ mongoUrl: 'mongodb://127.0.0.1:27017/ResQ' }),
+  store: MongoStore.create({ mongoUrl: 'mongodb+srv://admin:admin@cluster0.ndljknw.mongodb.net/ResQ' }),
   secret: 'keyboard cat', 
   resave: true, 
   saveUninitialized: true }));

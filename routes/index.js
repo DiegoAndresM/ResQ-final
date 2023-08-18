@@ -4,6 +4,8 @@ const Worker = require('../models/workers'); // Importar el modelo de usuario
 const passport = require('passport');
 const User = require('../models/user');
 const Pulse = require('../models/pulse')
+const Cord = require('../models/cord')
+
 
 
 /* GET home page. */

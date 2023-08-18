@@ -1,14 +1,14 @@
-const cordSchema = new mongoose.Schema({
+const mongoose = require('mongoose');
+
+const { Schema } = mongoose;
+
+const cordSchema = new Schema({
     Rname: String,
     location: {
       x: Number,
       y: Number
     },
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'user'
-    }
   });
   
-  const Cord = mongoose.model('cord', cordSchema);
+  module.exports = mongoose.model('cords', cordSchema); 
   
